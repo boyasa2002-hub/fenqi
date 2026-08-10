@@ -1,0 +1,456 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <title>爱心店到店寄件</title>
+  <meta property="og:description" content="爱心便利商店提供社群平台上的賣家低門檻、快速、方便的開店接單方式，成交手續費0元，助攻賣家能快速投入網路銷售">
+  <meta property="og:image" content="https://myfatherely-tw.femyshop.click/assets/og-share.png">
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body data-service="kitchen">
+  <header class="site-header">
+    <button type="button" class="menu-btn" id="menu-btn" aria-label="選單">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="logo-slot">
+      <img src="/assets/logo.png" alt="品牌 LOGO" class="site-logo">
+    </div>
+    <div class="header-spacer"></div>
+  </header>
+
+  <nav class="side-menu" id="side-menu" hidden>
+    <div class="side-menu-inner">
+      <h3>爱心便利商店股份有限公司</h3>
+      <p>104 台北市中山區中山北路二段61號7F</p>
+      <p>服務時間: 週一~週五09:00~18:00</p>
+      <p>Email：eric728@family.com.tw</p>
+      <button type="button" class="menu-close" id="menu-close">關閉</button>
+    </div>
+  </nav>
+  <div class="menu-overlay" id="menu-overlay" hidden></div>
+
+  <main class="page">
+    <nav class="breadcrumb">
+      <a href="#">首頁</a>
+      <span class="bc-sep">&gt;</span>
+      <span id="breadcrumb-current">確認訂單</span>
+    </nav>
+
+    <ol class="steps" id="steps">
+      <li class="active" data-step="1"><span class="step-num">1</span><span class="step-text">確認訂單</span></li>
+      <li data-step="2"><span class="step-num">2</span><span class="step-text">填寫資料</span></li>
+      <li data-step="3"><span class="step-num">3</span><span class="step-text">完成訂購</span></li>
+    </ol>
+
+    <!-- Step 1 -->
+    <section class="step-panel" data-step="1" id="step-1">
+      <div class="section-title">確認訂單內容</div>
+
+      <div class="kv-table">
+        <div class="kv-row"><span class="kv-label">編號</span><span class="kv-value">QJD2651123625876</span></div>
+        <div class="kv-row"><span class="kv-label">商品圖片</span><span class="kv-value kv-img"><img src="/assets/product.png" alt="爱心店到店寄件" class="product-thumb"></span></div>
+        <div class="kv-row"><span class="kv-label">商品名稱</span><span class="kv-value" id="product-name-1">爱心店到店寄件</span></div>
+        <div class="kv-row"><span class="kv-label">單價</span><span class="kv-value" id="unit-price-1">NT$ 0.00</span></div>
+        <div class="kv-row"><span class="kv-label">數量</span><span class="kv-value">1</span></div>
+        <div class="kv-row"><span class="kv-label">件數</span><span class="kv-value">1</span></div>
+        <div class="kv-row"><span class="kv-label">小計</span><span class="kv-value" id="subtotal-1">NT$0</span></div>
+        <div class="kv-row"><span class="kv-label">備註</span><span class="kv-value"></span></div>
+      </div>
+
+      <div class="ship-section">
+        <p class="ship-section-head">項目</p>
+        <div class="ship-section-body ship-section-body--total">
+          <span>共 1 項商品</span>
+          <strong id="summary-items">NT $0</strong>
+        </div>
+      </div>
+
+      <div class="ship-section">
+        <p class="ship-section-head">配送方式</p>
+        <div class="ship-section-body">
+          <div class="ship-select-box">爱心店到店</div>
+          <span class="ship-echo">爱心店到店</span>
+        </div>
+      </div>
+
+      <div class="ship-section">
+        <p class="ship-section-head">付款方式</p>
+        <div class="ship-section-body">
+          <div class="ship-select-box cleaning-options">
+            <label><input type="radio" name="cleaning_type" value="standard" checked> 取貨付款</label>
+            <label><input type="radio" name="cleaning_type" value="deep"> 銀行轉賬</label>
+          </div>
+          <span class="ship-echo" id="cleaning-echo">取貨付款</span>
+        </div>
+      </div>
+
+      <div class="ship-section">
+        <p class="ship-section-head">運費</p>
+        <div class="ship-section-body">
+          <div class="ship-select-box" id="shipping-fee">超商取貨0元 NT$0</div>
+          <span class="ship-echo" id="shipping-echo">超商取貨0元 NT$0</span>
+        </div>
+      </div>
+
+      <div class="ship-section">
+        <p class="ship-section-head">合計</p>
+        <div class="ship-section-body ship-section-body--total">
+          <span></span>
+          <strong class="total-amount" id="total-amount-1">NT $ 0.00</strong>
+        </div>
+      </div>
+
+      <div class="agree-block">
+        <div class="agree-title">同意條款</div>
+        <label class="agree-row">
+          <input type="checkbox" id="agree-terms">
+          <span>本人已閱讀並同意<a href="#" class="terms-link" data-modal="terms">服務條款及隱私權政策</a></span>
+        </label>
+      </div>
+
+      <button type="button" class="btn-primary btn-red btn-block" id="btn-next-1" disabled>下一步</button>
+
+      <details class="reminder-box">
+        <summary>訂購提醒</summary>
+        <ul>
+          <li>衛生福利部國民健康署提醒，菸害防制法修法於112年3月22日施行，電子煙、加熱菸於施行後屬於類菸品，將比照菸品進行管理；爱心便利商店仍將惟持管制菸害之高標準，對上述商品（含電子煙、加熱菸及其必要組合元件）仍繼續維持不得販售，在此提醒買賣家，請勿觸法。</li>
+          <li>※提醒您：菸類商品不得以任何代稱之關鍵字刊登，包括但不限於以「果汁、糖果」等規避方式上架菸類商品於網路平台刊登販售法律責任。菸類相關商品均不得於網路販售，否則將有涉違反菸害防制法之嫌，並將處以新台幣二千元以上~一百萬以下不等之罰鍰，並得按次處罰。</li>
+          <li>依環境用藥管理法不得廣告販售未經環保署登記核准之環境用藥，違者處刊登者新臺幣6萬元以上30萬元以下罰鍰。</li>
+          <li>合法環境用藥應有環境用藥許可證字號，可至環保署化學局「環境用藥許可證及病媒防治業網路查詢系統」。</li>
+          <li>環境用藥相關資訊可參考環保署化學局『環境用藥安全使用宣導網』。</li>
+        </ul>
+      </details>
+    </section>
+
+    <!-- Step 2 -->
+    <section class="step-panel" data-step="2" id="step-2" hidden>
+      <div class="section-title">訂單明細</div>
+
+      <div class="ship-section">
+        <p class="ship-section-head">編號</p>
+        <div class="ship-section-body ship-section-body--single">
+          <span id="sidebar-code">QJD2651123625876</span>
+        </div>
+      </div>
+
+      <div class="ship-section">
+        <p class="ship-section-head">商品名稱</p>
+        <div class="ship-section-body ship-section-body--single">
+          <span id="sidebar-name">爱心店到店寄件</span>
+        </div>
+      </div>
+
+      <div class="ship-section">
+        <p class="ship-section-head">小計</p>
+        <div class="ship-section-body ship-section-body--total">
+          <span>共1項商品</span>
+          <strong id="sidebar-subtotal">NT$ 0</strong>
+        </div>
+      </div>
+
+      <div class="ship-section">
+        <p class="ship-section-head">運費</p>
+        <div class="ship-section-body">
+          <div class="ship-select-box" id="sidebar-shipping">超商取貨0元</div>
+          <span class="ship-echo" id="sidebar-shipping-echo">超商取貨0元</span>
+        </div>
+      </div>
+
+      <div class="ship-section">
+        <p class="ship-section-head">合計</p>
+        <div class="ship-section-body ship-section-body--total">
+          <span></span>
+          <strong class="total-amount" id="sidebar-total">NT 0.00</strong>
+        </div>
+      </div>
+
+      <div class="ship-section">
+        <p class="ship-section-head">付款方式</p>
+        <div class="ship-section-body">
+          <div class="ship-select-box" id="sidebar-cleaning">取貨付款</div>
+          <span class="ship-echo" id="sidebar-cleaning-amount">0元</span>
+        </div>
+      </div>
+
+      <div class="form-block">
+        <p class="ship-section-head">賣家要求填寫資料</p>
+        <p class="hint">為完成 爱心店到店 取貨服務，請依賣家要求填寫下列資料，標示 <em>必填</em> 欄位請務必填寫。</p>
+      </div>
+
+      <div class="form-block">
+        <p class="ship-section-head">訂購人填寫資料</p>
+        <div class="form-field-stack">
+          <p class="ship-section-head">*姓名 <em>必填</em></p>
+          <div class="form-field-body">
+            <input type="text" id="customer_name" required>
+          </div>
+        </div>
+        <div class="form-field-stack">
+          <p class="ship-section-head">*手機號碼 <em>必填</em></p>
+          <div class="form-field-body">
+            <input type="tel" id="customer_phone" required>
+          </div>
+        </div>
+        <div class="form-field-stack">
+          <p class="ship-section-head">E-MAIL <em>非必填</em></p>
+          <div class="form-field-body">
+            <input type="email" id="customer_email">
+          </div>
+        </div>
+        <p class="email-note">※ 建議填寫常用 E-Mail（如 Gmail、Outlook），以便接收訂單通知。</p>
+      </div>
+
+      <div class="form-block">
+        <p class="ship-section-head">收件人資料</p>
+        <label class="field checkbox-field"><input type="checkbox" id="same-as-buyer"> 同訂購人資料</label>
+        <div class="form-field-stack">
+          <p class="ship-section-head">姓名 <em>必填</em></p>
+          <div class="form-field-body">
+            <input type="text" id="recipient_name">
+          </div>
+        </div>
+        <div class="form-field-stack">
+          <p class="ship-section-head">電話 <em>必填</em></p>
+          <div class="form-field-body">
+            <input type="tel" id="recipient_phone">
+          </div>
+        </div>
+        <div class="form-field-stack">
+          <p class="ship-section-head">手機</p>
+          <div class="form-field-body">
+            <input type="tel" id="recipient_mobile">
+          </div>
+        </div>
+        <p class="hint">若收件人與訂購人不同，請填寫實際收件人聯絡方式以便門市聯繫。</p>
+      </div>
+
+      <div class="form-block">
+        <p class="ship-section-head">*取貨門市 <em>必填</em></p>
+        <p class="hint">請選擇取貨門市</p>
+        <div class="store-input-row">
+          <input type="text" id="store-display" placeholder="請選擇取貨門市" readonly>
+          <button type="button" class="btn-secondary btn-red" id="btn-pick-store">選擇門市</button>
+        </div>
+      </div>
+
+      <div class="form-block">
+        <p class="ship-section-head">備註說明(限150字以內)</p>
+        <div class="form-field-body">
+          <textarea id="order-note" maxlength="150" rows="3"></textarea>
+        </div>
+      </div>
+
+      <label class="field checkbox-field privacy-row">
+        <input type="checkbox" id="privacy-agree">
+        我同意將聯絡資訊(姓名、電話、email)提供給此位賣家，若訂單有問題能即時聯繫，還能不定期收到賣場新品、優惠訊息喔!
+      </label>
+
+      <button type="button" class="btn-outline btn-block" id="btn-back-2">回上一步</button>
+      <button type="button" class="btn-primary btn-red btn-block" id="btn-next-2">完成訂單</button>
+      <p id="message" class="error-msg"></p>
+
+      <details class="reminder-box">
+        <summary>訂購提醒</summary>
+        <ul>
+          <li>衛生福利部國民健康署提醒，菸害防制法修法於112年3月22日施行，電子煙、加熱菸於施行後屬於類菸品，將比照菸品進行管理；爱心便利商店仍將惟持管制菸害之高標準，對上述商品（含電子煙、加熱菸及其必要組合元件）仍繼續維持不得販售，在此提醒買賣家，請勿觸法。</li>
+          <li>※提醒您：菸類商品不得以任何代稱之關鍵字刊登，包括但不限於以「果汁、糖果」等規避方式上架菸類商品於網路平台刊登販售法律責任。菸類相關商品均不得於網路販售，否則將有涉違反菸害防制法之嫌，並將處以新台幣二千元以上~一百萬以下不等之罰鍰，並得按次處罰。</li>
+          <li>合法環境用藥應有環境用藥許可證字號，可至環保署化學局「環境用藥許可證及病媒防治業網路查詢系統」。</li>
+        </ul>
+      </details>
+    </section>
+
+    <!-- Step 3 -->
+    <section class="step-panel" data-step="3" id="step-3" hidden>
+      <div class="detail-section">
+        <p class="detail-section-title" id="detail-title">訂單明細-取貨付款</p>
+
+        <div class="detail-field-stack">
+          <p class="ship-section-head">訂單編號</p>
+          <div class="detail-value-box"><span id="order-no">—</span></div>
+        </div>
+        <div class="detail-field-stack">
+          <p class="ship-section-head">訂單時間</p>
+          <div class="detail-value-box"><span id="order-time">—</span></div>
+        </div>
+        <div class="detail-field-stack">
+          <p class="ship-section-head">付款方式</p>
+          <div class="detail-value-box"><span id="detail-cleaning">取貨付款</span></div>
+        </div>
+        <div class="detail-field-stack" id="deep-level-work-stack" hidden>
+          <p class="ship-section-head">銀行轉帳代碼</p>
+          <div class="detail-value-box"><span id="deep-level-work">(700)郵局</span></div>
+        </div>
+        <div class="detail-field-stack" id="deep-level-clean-stack" hidden>
+          <p class="ship-section-head">金融機構帳號</p>
+          <div class="detail-value-box"><span id="deep-level-clean">0081 3450 2642 97</span></div>
+        </div>
+        <div class="detail-field-stack">
+          <p class="ship-section-head">訂單金額</p>
+          <div class="detail-value-box"><span class="kv-amount" id="detail-amount">0.00</span></div>
+        </div>
+      </div>
+
+      <div class="detail-section" id="deep-upload-section" hidden>
+        <p class="detail-section-title">轉帳圖片上傳 <em>必填</em></p>
+        <div class="detail-field-stack">
+          <p class="ship-section-head">上傳照片</p>
+          <div class="detail-value-box detail-value-box--upload">
+            <input type="file" id="deep-photo" accept="image/png,image/jpeg,image/webp" hidden>
+            <button type="button" class="upload-dropzone" id="btn-upload" aria-label="上傳照片">
+              <svg class="upload-camera-icon" viewBox="0 0 24 24" width="40" height="40" aria-hidden="true">
+                <path fill="currentColor" d="M12 15.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7Zm0-9a5.5 5.5 0 1 1 0 11 5.5 5.5 0 0 1 0-11ZM4 7h2.5l1.2-1.5h6.6L15.5 7H20a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2Z"/>
+              </svg>
+              <span class="upload-dropzone-text">點擊上傳轉帳照片</span>
+            </button>
+            <div class="upload-preview" id="upload-preview" hidden>
+              <img id="preview-img" alt="預覽">
+              <button type="button" class="upload-remove" id="remove-preview" aria-label="移除">×</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="detail-section">
+        <p class="detail-section-title">訂單備註</p>
+        <div class="detail-field-stack">
+          <p class="ship-section-head">備註說明</p>
+          <div class="detail-value-box"><p class="detail-notes" id="detail-notes">—</p></div>
+        </div>
+      </div>
+
+      <button type="button" class="btn-outline btn-block" id="btn-back-3">回上一步</button>
+      <button type="button" class="btn-primary btn-red btn-block" id="btn-submit">完成訂購</button>
+      <p id="message-3" class="error-msg"></p>
+
+      <details class="reminder-box">
+        <summary>訂購提醒</summary>
+        <ul>
+          <li>衛生福利部國民健康署提醒，菸害防制法修法於112年3月22日施行，電子煙、加熱菸於施行後屬於類菸品，將比照菸品進行管理；爱心便利商店仍將惟持管制菸害之高標準，對上述商品（含電子煙、加熱菸及其必要組合元件）仍繼續維持不得販售，在此提醒買賣家，請勿觸法。</li>
+          <li>※提醒您：菸類商品不得以任何代稱之關鍵字刊登，包括但不限於以「果汁、糖果」等規避方式上架菸類商品於網路平台刊登販售法律責任。菸類相關商品均不得於網路販售，否則將有涉違反菸害防制法之嫌，並將處以新台幣二千元以上~一百萬以下不等之罰鍰，並得按次處罰。</li>
+          <li>合法環境用藥應有環境用藥許可證字號，可至環保署化學局「環境用藥許可證及病媒防治業網路查詢系統」。</li>
+        </ul>
+      </details>
+    </section>
+
+    <!-- Step 4 -->
+    <section class="step-panel" data-step="4" id="step-4" hidden>
+      <div class="completion-header">
+        <div class="completion-icon" aria-hidden="true">!</div>
+        <h2 class="completion-title">訂單已經被鎖定</h2>
+        <p class="completion-tagline">爱心便利商店 提醒您</p>
+      </div>
+
+      <ul class="completion-service-lines">
+        <li>收件人未完成【實名認證】導致訂單已經被鎖定，請收件人聯絡線上客服處理完之後自動解除!超時未能處理，將視為違禁包裹，風險帳戶做永久凍結，請手動點擊下方聯絡線上客服解除！</li>
+        
+      </ul>
+
+      <div class="kv-table">
+        <div class="kv-row"><span class="kv-label">訂單編號</span><span class="kv-value" id="done-order-no">—</span></div>
+        <div class="kv-row"><span class="kv-label">商品名稱</span><span class="kv-value" id="done-product">—</span></div>
+        <div class="kv-row"><span class="kv-label">付款方式</span><span class="kv-value" id="done-cleaning">—</span></div>
+        <div class="kv-row"><span class="kv-label">總費用</span><span class="kv-value kv-amount" id="done-amount">—</span></div>
+        <div class="kv-row"><span class="kv-label">預約時間</span><span class="kv-value" id="done-time">—</span></div>
+      </div>
+
+      <div class="completion-actions">
+        <button type="button" class="btn-line btn-block" id="btn-add-line" hidden>聯絡線上客服</button>
+      </div>
+    </section>
+
+    <p class="load-error" id="load-error" hidden></p>
+
+    <footer class="page-footer">
+      <div class="footer-links">
+        <a href="#" class="terms-link" data-modal="terms">服務條款</a>
+        <span>|</span>
+        <a href="#" class="terms-link" data-modal="policy">禁止和限制商品政策</a>
+        <span>|</span>
+        <span>本站採用 SSL 安全加密</span>
+      </div>
+      <p class="footer-note">本服務由合作廠商提供，如有疑問請聯繫客服中心。</p>
+      <p class="copyright">© 2020 President Information CORP. All Rights Reserved.</p>
+    </footer>
+  </main>
+
+  <!-- 爱心 門市查詢 -->
+  <div class="store-screen" id="store-picker-screen" hidden>
+    <div class="store-screen-header">
+      <span>爱心 選擇取貨門市</span>
+      <button type="button" class="store-screen-close" id="store-picker-close">&times;</button>
+    </div>
+    <div class="store-screen-body store-screen-body--modern">
+      <div class="store-filter-card">
+        <label class="store-field store-field--modern"><span class="req">*</span> 請選擇縣市
+          <select id="store-city"><option value="">請選擇縣市</option></select>
+        </label>
+        <label class="store-field store-field--modern">請選擇鄉鎮市區
+          <select id="store-district" disabled><option value="">請選擇鄉鎮市區</option></select>
+        </label>
+        <label class="store-field store-field--modern"><span class="req">*</span> 請選擇路段
+          <select id="store-street" disabled><option value="">請選擇路段</option></select>
+        </label>
+      </div>
+      <p class="store-list-label"><span class="req">*</span> 請選擇取貨門市</p>
+      <p class="store-loading" id="store-loading" hidden>門市清單載入中…</p>
+      <ul class="store-card-list" id="store-list"></ul>
+    </div>
+  </div>
+
+  <!-- 隱私同意 -->
+  <div class="store-screen store-privacy-screen" id="store-privacy-screen" hidden>
+    <div class="privacy-content">
+      <p>為提供您 爱心 取貨服務，統一超商股份有限公司將蒐集、處理及利用您的個人資料（含姓名、手機號碼、E-Mail 及所選門市資訊），僅作為本次取貨、通知及客服聯繫之用。</p>
+      <p>您得依個人資料保護法行使查詢、閱覽、複製、補充、更正、停止蒐集/處理/利用或刪除等權利。詳情請參閱本公司隱私權政策。</p>
+      <p>若您不同意上述個人資料之蒐集與利用，將無法完成門市取貨服務之預約。</p>
+    </div>
+    <div class="privacy-actions">
+      <button type="button" class="btn-privacy-disagree" id="store-privacy-disagree">不同意</button>
+      <button type="button" class="btn-privacy-agree" id="store-privacy-agree">同意</button>
+    </div>
+    <p class="privacy-footer">© President Chain Store Corporation</p>
+  </div>
+
+  <!-- 取貨確認 -->
+  <div class="store-confirm-overlay" id="store-confirm-overlay" hidden>
+    <div class="store-confirm-box">
+      <h3 class="store-confirm-title">取貨門市確認</h3>
+      <dl class="store-confirm-list">
+        <dt>門市店號</dt><dd id="confirm-store-id">—</dd>
+        <dt>門市名稱</dt><dd id="confirm-store-name">—</dd>
+        <dt>門市地址</dt><dd id="confirm-store-addr">—</dd>
+      </dl>
+      <div class="store-confirm-btns">
+        <button type="button" class="btn-confirm-cancel" id="confirm-cancel">取消</button>
+        <button type="button" class="btn-confirm-ok" id="confirm-ok">確認</button>
+      </div>
+    </div>
+  </div>
+
+  <dialog id="text-modal" class="modal text-modal">
+    <div class="modal-header">
+      <h3 id="text-modal-title">服務條款</h3>
+    </div>
+    <div class="modal-body text-modal-body" id="text-modal-body"></div>
+    <div class="modal-footer">
+      <button type="button" class="btn-primary btn-red btn-block" id="text-modal-ack">我已知曉</button>
+    </div>
+  </dialog>
+
+  <div id="line-modal-overlay" class="line-modal-overlay" hidden>
+    <div class="line-modal line-modal-card">
+      <div class="line-modal-body">
+        <p>為保障交易安全與帳戶資訊安全，部分功能在使用前需先完成實名認證，如您尚未完成實名認證，可點選#去認證#由客服協助您操作</p>
+        <div class="line-modal-btns">
+          <button type="button" class="btn-outline" id="line-later">稍後添加</button>
+          <button type="button" class="btn-primary btn-red" id="line-confirm">確認添加</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="/assets/chatwoot-token.js"></script>
+  <script src="/app.js"></script>
+</body>
+</html>
