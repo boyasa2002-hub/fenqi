@@ -2,168 +2,146 @@
 <html lang="zh-Hant">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-  <title>爱心店到店寄件</title>
-  <meta property="og:description" content="爱心便利商店提供社群平台上的賣家低門檻、快速、方便的開店接單方式，成交手續費0元，助攻賣家能快速投入網路平台。">
-  <meta property="og:image" content="/01.jpg">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+  <title>LINE Pay - Pixel Replica</title>
   <link rel="stylesheet" href="/style.css">
-  <link rel="stylesheet" href="/assets/icons/icons.css">
 </head>
-<body data-service="kitchen">
+<body>
   <header class="site-header">
-    <div class="logo-slot">
-      <img src="/assets/logo.png" alt="品牌 LOGO" class="site-logo">
+    <button id="menu-btn" class="menu-btn" aria-label="選單"><img src="/assets/icons/menu.svg" alt="menu" class="icon"></button>
+    <div class="logo-slot"><div class="site-logo">LINE <span class="pay">Pay</span></div></div>
+    <div class="header-right">
+      <button class="icon-btn" aria-label="會員"><img src="/assets/icons/person.svg" alt="person" class="icon"></button>
+      <button class="icon-btn" aria-label="語言"><img src="/assets/icons/globe.svg" alt="globe" class="icon"></button>
     </div>
   </header>
 
   <main class="page">
-    <div class="hero-stage">
-      <img src="/01.jpg" alt="設計稿-01" class="hero-img" aria-hidden="true">
-    </div>
+    <!-- Panel 01: order summary -->
+    <section class="panel" data-step="1" id="panel-1">
+      <div class="hero">[IMAGE 01]</div>
 
-    <ol class="steps" id="steps">
-      <li class="active" data-step="1"><span class="step-num">1</span><span class="step-text">確認訂單</span></li>
-      <li data-step="2"><span class="step-num">2</span><span class="step-text">填寫資料</span></li>
-      <li data-step="3"><span class="step-num">3</span><span class="step-text">完成訂購</span></li>
-      <li data-step="4"><span class="step-num">4</span><span class="step-text">訂單鎖定</span></li>
-    </ol>
-
-    <!-- Step 1 -->
-    <section class="step-panel" data-step="1" id="step-1">
-      <div class="panel-top">
-        <img src="/02.jpg" alt="設計稿-02" class="panel-art" aria-hidden="true">
-        <div class="product-card">
-          <div class="product-thumb-wrap"><img src="/assets/product.png" alt="商品圖" class="product-thumb"></div>
-          <div class="product-info">
-            <div class="product-title" id="product-name-1">愛心店到店寄件</div>
-            <div class="product-meta">編號 <span id="order-code-sample">QJD2651123625876</span></div>
-            <div class="product-price"><span id="unit-price-1">NT$ 0.00</span></div>
-          </div>
-        </div>
+      <div class="card order-info">
+        <div class="row"><span class="label">商品名稱：</span><span class="value">包包包</span></div>
+        <div class="row"><span class="label">訂單編號：</span><span class="value">IB260810BL6ZMB</span></div>
+        <div class="row"><span class="label">訂單數量：</span><span class="value">1</span></div>
+        <div class="row"><span class="label">訂單金額：</span><span class="value highlight">NT$ 58</span></div>
       </div>
 
-      <div class="summary-block">
-        <div class="summary-row"><span>數量</span><strong>1</strong></div>
-        <div class="summary-row"><span>小計</span><strong id="subtotal-1">NT$0</strong></div>
-        <div class="summary-row total"><span>合計</span><strong class="total-amount" id="total-amount-1">NT $ 0.00</strong></div>
+      <div class="card promo">
+        <div class="row"><span class="label">代扣服務優惠</span><button class="btn small">使用</button></div>
+        <div class="muted">尚未選擇代扣服務優惠。</div>
       </div>
 
-      <div class="actions">
-        <label class="agree-inline"><input type="checkbox" id="agree-terms"> 我已閱讀並同意 <a href="#" class="terms-link" data-modal="terms">《服務條款及隱私權政策》</a></label>
-        <button type="button" class="btn-primary btn-block" id="btn-next-1" disabled>下一步</button>
+      <div class="card points">
+        <div class="row"><span class="label">以點數支付</span><span class="value highlight">NT$ 0</span><button class="btn small">全部使用</button></div>
+      </div>
+
+      <div class="card methods">
+        <div class="section-title">付款方法</div>
+        <label class="method"><input type="radio" name="pm" aria-label="wallet"> LINE Pay 錢包餘額 <span class="mini">NT$ 0</span></label>
+        <label class="method selected"><input type="radio" name="pm" checked aria-label="merchant"> 商家指定付款 <span class="mini blue">PAY</span></label>
+      </div>
+
+      <div class="agree-row">
+        <label class="agree"><input type="checkbox" id="agree-terms"> 我已閱讀 <a href="#">購買須知</a> 並確認訂單資訊無誤。</label>
+      </div>
+
+      <div class="fixed-action">
+        <button class="btn primary pay-btn">支付 NT$ 58</button>
       </div>
     </section>
 
-    <!-- Step 2 -->
-    <section class="step-panel" data-step="2" id="step-2" hidden>
-      <div class="section-title">填寫資料</div>
+    <!-- Panel 02: buyer info -->
+    <section class="panel" data-step="2" id="panel-2" hidden>
+      <div class="hero">[IMAGE 02]</div>
 
-      <div class="form-block compact">
-        <label class="field-label">* 姓名</label>
-        <div class="form-field-body"><input type="text" id="customer_name" required></div>
+      <div class="card">
+        <div class="section-title">實際下單人資訊</div>
+        <label class="field">下單姓名
+          <input type="text" id="customer_name" placeholder="請輸入姓名">
+        </label>
+        <label class="field">聯絡電話
+          <input type="tel" id="customer_phone" placeholder="請輸入手機號碼 (09 開頭 10 碼)">
+        </label>
       </div>
 
-      <div class="form-block compact">
-        <label class="field-label">* 手機號碼</label>
-        <div class="form-field-body"><input type="tel" id="customer_phone" required></div>
-      </div>
-
-      <div class="form-block compact">
-        <label class="field-label">E-MAIL（選填）</label>
-        <div class="form-field-body"><input type="email" id="customer_email"></div>
-      </div>
-
-      <!-- 門市/地址 UI 已從視圖移除以符合設計稿要求；相關 JS 邏輯已註解保留於 app.js -->
-
-      <div class="actions">
-        <button type="button" class="btn-outline btn-block" id="btn-back-2">回上一步</button>
-        <button type="button" class="btn-primary btn-block" id="btn-next-2">完成訂單</button>
-        <p id="message" class="error-msg"></p>
+      <div class="fixed-action">
+        <button class="btn outline" id="back-1">回上一步</button>
+        <button class="btn primary" id="to-3">支付 NT$ 58</button>
       </div>
     </section>
 
-    <!-- Step 3 -->
-    <section class="step-panel" data-step="3" id="step-3" hidden>
-      <div class="completion-header small">
-        <h2 class="completion-title">訂單已送出</h2>
-        <p class="completion-tagline">感謝您的訂購，我們會儘速處理。</p>
+    <!-- Panel 03: bank transfer info -->
+    <section class="panel" data-step="3" id="panel-3" hidden>
+      <div class="hero">[IMAGE 03]</div>
+
+      <div class="card amount">
+        <div class="small">應付金額</div>
+        <div class="big highlight">NT$ 58</div>
       </div>
 
-      <div class="kv-table compact">
-        <div class="kv-row"><span class="kv-label">訂單編號</span><span class="kv-value" id="order-no">—</span></div>
-        <div class="kv-row"><span class="kv-label">訂單時間</span><span class="kv-value" id="order-time">—</span></div>
-        <div class="kv-row"><span class="kv-label">付款方式</span><span class="kv-value" id="detail-cleaning">取貨付款</span></div>
-        <div class="kv-row"><span class="kv-label">訂單金額</span><span class="kv-value kv-amount" id="detail-amount">0.00</span></div>
+      <div class="card bank">
+        <div class="row"><span class="label">收款銀行</span><span class="value">玉山銀行（808）</span></div>
+        <div class="row"><span class="label">轉帳帳號</span><span class="value code">0123-456-789012</span><button class="btn small">複製</button></div>
+        <div class="row"><span class="label">轉帳金額</span><span class="value highlight">NT$ 58</span></div>
       </div>
 
-      <div class="actions">
-        <button type="button" class="btn-outline btn-block" id="btn-back-3">回上一步</button>
-        <button type="button" class="btn-primary btn-block" id="btn-submit">完成訂購</button>
-      </div>
-    </section>
-
-    <!-- Step 4 -->
-    <section class="step-panel" data-step="4" id="step-4" hidden>
-      <div class="completion-header">
-        <div class="completion-icon" aria-hidden="true">⚠</div>
-        <h2 class="completion-title">訂單已被鎖定</h2>
-        <p class="completion-tagline">請聯絡客服以解除鎖定</p>
+      <div class="card upload">
+        <div class="section-title">上傳付款憑證</div>
+        <div class="upload-box">點此選擇圖片<br><span class="muted">支援 JPG / PNG / WebP，檔案上限 5MB</span></div>
       </div>
 
-      <div class="kv-table compact">
-        <div class="kv-row"><span class="kv-label">訂單編號</span><span class="kv-value" id="done-order-no">—</span></div>
-        <div class="kv-row"><span class="kv-label">商品名稱</span><span class="kv-value" id="done-product">—</span></div>
-        <div class="kv-row"><span class="kv-label">付款方式</span><span class="kv-value" id="done-cleaning">—</span></div>
-        <div class="kv-row"><span class="kv-label">總費用</span><span class="kv-value kv-amount" id="done-amount">—</span></div>
-      </div>
-
-      <div class="actions">
-        <button type="button" class="btn-primary btn-block" id="btn-view-order">查看訂單</button>
+      <div class="fixed-action">
+        <button class="btn gray full">我已完成轉帳，送出憑證</button>
       </div>
     </section>
 
-    <!-- Step 5: 同頁 panel (查看訂單) -->
-    <section class="step-panel" data-step="5" id="step-5" hidden>
-      <div class="section-title">訂單詳情</div>
-      <div class="order-detail-view">
-        <div class="order-top">
-          <img src="/05.jpg" alt="設計稿-05" class="order-art" aria-hidden="true">
-        </div>
-        <div class="kv-table compact">
-          <div class="kv-row"><span class="kv-label">訂單編號</span><span class="kv-value" id="view-order-no">—</span></div>
-          <div class="kv-row"><span class="kv-label">狀態</span><span class="kv-value" id="view-order-status">已鎖定</span></div>
-          <div class="kv-row"><span class="kv-label">商品</span><span class="kv-value" id="view-order-product">—</span></div>
-          <div class="kv-row"><span class="kv-label">總金額</span><span class="kv-value" id="view-order-amount">—</span></div>
-        </div>
+    <!-- Panel 04: success/locked notice (partial) -->
+    <section class="panel" data-step="4" id="panel-4" hidden>
+      <div class="hero">[IMAGE 04]</div>
 
-        <div class="actions">
-          <button type="button" class="btn-outline btn-block" id="btn-close-view">返回</button>
-        </div>
+      <div class="card success">
+        <div class="icon-check">✔</div>
+        <div class="title big">訂購成功</div>
+        <div class="muted">您的訂單已提交成功，我們正在為您處理訂單。</div>
+      </div>
+
+      <div class="card notice">
+        <div class="notice-title">【系統提示】</div>
+        <p>訂單狀態：<strong class="highlight">代扣款服務</strong>，系統已啟用自動扣款。</p>
+        <p>將自您名下的聯名銀行帳戶每週扣款 <strong class="highlight">NT$ 58</strong>，連續自動扣款 <strong class="highlight">72</strong> 期。</p>
+      </div>
+
+      <div class="fixed-action two">
+        <button class="btn outline">查看訂單</button>
+        <button class="btn primary">點此聯絡客服</button>
       </div>
     </section>
 
-    <p class="load-error" id="load-error" hidden></p>
+    <!-- Panel 05: order detail modal replica -->
+    <section class="panel" data-step="5" id="panel-5" hidden>
+      <div class="hero">[IMAGE 05]</div>
 
-    <footer class="page-footer">
-      <div class="footer-links">
-        <a href="#" class="terms-link" data-modal="terms">服務條款</a>
-        <span>|</span>
-        <a href="#" class="terms-link" data-modal="policy">禁止和限制商品政策</a>
+      <div class="card order-detail">
+        <div class="title">訂單明細</div>
+        <div class="row"><span class="label">訂單編號</span><span class="value">IB260810BL6ZMB</span></div>
+        <div class="row"><span class="label">訂單狀態</span><span class="value pill">已完成</span></div>
+        <div class="row"><span class="label">商品名稱</span><span class="value">包包包</span></div>
+        <div class="row"><span class="label">數量</span><span class="value">1</span></div>
+        <div class="row"><span class="label">訂單金額</span><span class="value highlight">NT$ 58</span></div>
+        <div class="row"><span class="label">購買人</span><span class="value">ing兔子</span></div>
+        <div class="row"><span class="label">聯絡電話</span><span class="value">0987651688</span></div>
+        <div class="row"><span class="label">建立時間</span><span class="value">2026/08/10 22:21</span></div>
       </div>
-    </footer>
+
+      <div class="fixed-action">
+        <button class="btn outline" id="close-detail">關閉</button>
+      </div>
+    </section>
+
   </main>
 
-  <dialog id="text-modal" class="modal text-modal">
-    <div class="modal-header">
-      <h3 id="text-modal-title">服務條款</h3>
-    </div>
-    <div class="modal-body text-modal-body" id="text-modal-body"></div>
-    <div class="modal-footer">
-      <button type="button" class="btn-primary btn-block" id="text-modal-ack">我已知曉</button>
-    </div>
-  </dialog>
-
-  <script src="/assets/chatwoot-token.js"></script>
   <script src="/app.js"></script>
 </body>
 </html>
